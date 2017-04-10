@@ -1,8 +1,8 @@
-FROM heroku/heroku:16
+FROM herokutest/alpinehelloworld
 
-# Heroku 16 has 8 layers. We need to get to at least 53. Add 53 dummy steps that
-# produce no bloat, ignoring the initial eight layers. (It's no harm if we go
-# over 53.)
+# We need to get at least 53 layers. Add 53 dummy steps that produce no bloat,
+# ignoring the initial layers inherited from the parent container. (It's no harm
+# if we go over 53.)
 RUN true
 RUN true
 RUN true
